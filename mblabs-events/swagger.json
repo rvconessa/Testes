@@ -1,0 +1,220 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "MBLabs Events API",
+    "description": "API Events"
+  },
+  "host": "localhost:8080/",
+  "basePath": "",
+  "tags": [
+    {
+      "name": "Events",
+      "description": "API for events"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/events": {
+      "get": {
+        "tags": [
+          "Events"
+        ],
+        "summary": "Get all events in system",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Event"
+            }
+          },
+          "404":{
+            "description": "Not Found"
+          },
+          "412":{
+            "description": "Precondition Failed"
+          }
+        }
+      }
+    },
+    "/events/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "ID of event that we want to find",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Events"
+        ],
+        "summary": "Get event with given ID",
+        "responses": {
+          "200": {
+            "description": "Event found",
+            "schema": {
+              "$ref": "#/definitions/Event"
+            }
+          },
+          "404":{
+            "description": "Not Found"
+          },
+          "412":{
+            "description": "Precondition Failed"
+          }
+        }
+      }
+    },
+    "/events/{id}/subscrible": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "Subscrible event",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Events"
+        ],
+        "summary": "Subscrible event",
+        "responses": {
+          "200": {
+            "description": "Subscrible event ok",
+            "schema": {
+              "$ref": "#/definitions/EventSubscrible"
+            }
+          },
+          "401":{
+            "description": "Unauthorized Error"
+          },
+          "404":{
+            "description": "Not Found"
+          },
+          "412":{
+            "description": "Precondition Failed"
+          }
+        }
+      }
+    },
+    "/events/{id}/unsubscrible": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "Unsubscrible event",
+          "type": "string"
+        }
+      ],
+      "delete": {
+        "tags": [
+          "Events"
+        ],
+        "summary": "Unsubscrible event",
+        "responses": {
+          "204": {
+            "description": "Unsubscrible event ok"
+          },
+          "404":{
+            "description": "Not Found"
+          },
+          "401":{
+            "description": "Unauthorized Error"
+          },
+          "412":{
+            "description": "Precondition Failed"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Event": {
+      "required": [
+        "id",
+        "name",
+        "description",
+        "eventStart",
+        "eventEnd",
+        "place",
+        "city",
+        "createdAt",
+        "updatedAt"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "uniqueItems": true,
+          "example": 1
+        },
+        "name": {
+          "type": "string",
+          "uniqueItems": true,
+          "example": "Intercon"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 3,
+          "example": "O Intercon é um evento brasileiro sobre criatividade, tecnologia, inovação e desenvolvimento web de alto nível."
+        },
+        "eventStart": {
+          "type": "string",
+          "example": "2018-10-08T00:00:00.000Z"
+        },
+        "eventEnd": {
+          "type": "string",
+          "example":"2018-10-10T00:00:00.000Z"
+        },
+        "place":{
+          "type":"string",
+          "example": "Hotel"
+        },
+        "city":{
+          "type":"string",
+          "example": "São Paulo"
+        }
+      }
+    },
+    "EventSubscrible": {
+      "required": [
+        "createdAt",
+        "updatedAt",
+        "EventId",
+        "UserId"
+      ],
+      "properties": {
+        "createdAt": {
+          "type": "integer",
+          "example": "2018-10-15T02:09:38.316Z"
+        },
+        "updatedAt": {
+          "type": "string",
+          "example": "2018-10-15T02:09:38.316Z"
+        },
+        "EventId": {
+          "type": "integer",
+          "example": 5
+        },
+        "UserId": {
+          "type": "integer",
+          "example": 1
+        }
+      }
+    }
+  }
+}

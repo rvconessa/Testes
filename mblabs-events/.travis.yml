@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "stable"
+services:
+  - postgresql
+test:
+  adapter: postgresql
+  database: mblabs_events
+  username: mblabs
+  password: mblabs
+before_script:
+  - psql -c "CREATE DATABASE mblabs_events;" -U postgres
+  - psql -c "CREATE USER mblabs WITH PASSWORD 'mblabs';" -U postgres
+cache:
+  directories:
+    - "node_modules"

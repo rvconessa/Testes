@@ -1,0 +1,43 @@
+{
+  "name": "mblabs_events",
+  "version": "1.0.0",
+  "description": "Aplicativo para vaga de desenvolvedor Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test mocha test/**/*.js",
+    "babel": "NODE_ENV=development babel-node index.js",
+    "start": "NODE_ENV=production babel-node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "body-parser": "^1.18.3",
+    "consign": "^0.1.6",
+    "express": "^4.16.3",
+    "jwt-simple": "^0.5.5",
+    "mysql2": "^1.6.1",
+    "nodemon": "^1.18.4",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "pg": "^7.5.0",
+    "sequelize": "^4.39.0",
+    "sqlite3": "^4.0.2",
+    "swagger-ui-express": "^4.0.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "sequelize-cli": "^4.1.1",
+    "supertest": "^3.3.0"
+  }
+}
