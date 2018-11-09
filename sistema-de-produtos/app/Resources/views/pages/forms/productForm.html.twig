@@ -1,0 +1,50 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+<link href="{{ asset('assets/css/checkbox.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('assets/css/form.css') }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block body %}
+        <form method="POST" enctype="multipart/form-data">      
+        <div class="modal-header">
+            <h3 class="modal-title">Cadastrar</h3>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                    <div class="col-md-8">
+                        <label for="exampleInputEmail1">Código:</label>
+                        <input type="number" id="code" placeholder="Código" ng-model="product.code">
+                    </div>
+                    <div class="col-md-2">
+                        <label>Ativo:
+                            <input type="checkbox" ng-model="product.active" name="active" class="custom-checkbox green mini" value="1" checked/>
+                            <div><div></div></div>
+                        </label>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="exampleInputEmail1">Descriçao:</label>
+                        <input type="text"  id="description"  placeholder="Descrição" ng-model="product.description">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="exampleInputEmail1">Saldo:</label>
+                        <input type="number" id="balance" ng-model="product.balance"  placeholder="Saldo">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="exampleInputEmail1">Preço:</label>
+                        <input type="number" name="price" step="0.01" min="0.01" ng-model="product.price" max="9999" id="product.price" placeholder="Preço">
+                    </div>
+
+                
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+            <button class="btn btn-primary" type="button" ng-click="create()">Gravar</button>
+        </div>
+        </form>
+    
+{% endblock %}
+{% block javascripts %}
+<script src="{{ asset('assets/js/angular/controllers/IndexController.js') }}"></script> 
+{% endblock %}

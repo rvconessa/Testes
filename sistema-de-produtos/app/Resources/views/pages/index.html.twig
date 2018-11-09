@@ -1,0 +1,45 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    <div class="container" ng-controller="IndexController">
+        <div class="page-header">
+            <h1>Produtos</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <a href="#add" ng-click="open('new')" class="btn btn-success">Novo</a>
+                <a href="#edit" class="btn btn-primary" ng-click="open('edit')">Editar</a>
+                <a href="#remove" class="btn btn-danger" ng-click="confirmRemove()">Excluir</a>
+            </div>
+            <hr />
+            <div class="col-md-12">
+                <table ng-table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" ></th>
+                            <th>Código</th>
+                            <th>Descrição</th>
+                            <th>Saldo</th>
+                            <th>Preço</th>
+                            <th>Ativo?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="product in products">
+                            <td><input type="checkbox" ng-model="product.selected" name="delete[]" value="{[{ product.id }]}" ></td>
+                            <td>{[{ product.code }]}</td>
+                            <td>{[{ product.description }]}</td>
+                            <td>{[{ product.balance }]}</td>
+                            <td>{[{ product.price }]}</td>
+                            <td>{[{ product.active == 1 && 'Sim' || 'Não' }]}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script type="text/ng-template"></script>
+{% endblock %}
+{% block javascripts %}
+<script src="{{ asset('assets/js/angular/controllers/IndexController.js') }}"></script> 
+{% endblock %}
