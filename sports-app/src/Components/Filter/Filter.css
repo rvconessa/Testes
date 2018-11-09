@@ -1,0 +1,12 @@
+section .details {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  -ms-grid-columns: repeat(12, 1fr);
+  background-color: #BAEBE1;
+  color: #444;
+  height: 175px; }
+  section .details .clear {
+    background-color: #2c8129;
+    float: left; }
+  section .details .item-1 {
+    grid-column: 1 span; }

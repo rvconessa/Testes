@@ -1,0 +1,17 @@
+section .details{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    -ms-grid-columns:repeat(12, 1fr);
+    background-color: #BAEBE1;
+    color: #444;
+    height: 175px;
+
+    .clear{
+      background-color: rgb(44, 129, 41);
+      float: left;
+    }
+
+    .item-1{
+      grid-column: 1 span;
+    }
+}

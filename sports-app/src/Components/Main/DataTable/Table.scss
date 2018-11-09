@@ -1,0 +1,56 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+
+  tbody tr a {
+    color:#1ABC9C;
+    text-decoration: none;
+  }
+
+  tbody tr:hover {
+    background-color: #dcdcdc;
+  }
+
+  tbody tr:hover .btn-sm i {
+    display: block !important;
+  }
+
+  tbody tr td .trash {
+    color: transparent;
+  }
+
+  tbody tr:hover a.trash {
+    color: #1ABC9C;
+    display: block !important;
+  }
+
+  tbody td:nth-child(3) {
+    color: #1ABC9C;
+  }
+
+  tbody td:nth-child(4) {
+    color: #1ABC9C;
+  }
+
+}
+th, td {
+  padding: 0.5rem;
+  text-align: left;
+}
+tbody tr:nth-child(even) {
+  background: #eee;
+}
+
+.btn-sm {
+  background-color: transparent;
+  width: 30px;
+
+  i {
+    color: #1ABC9C;
+    display: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,8 @@
+main .filter {
+  grid-column-start: 9;
+  grid-column-end: 12; }
+  main .filter input {
+    width: 80%;
+    margin: 35px 70px;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 700; }

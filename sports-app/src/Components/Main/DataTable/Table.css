@@ -1,0 +1,35 @@
+table {
+  border-collapse: collapse;
+  width: 100%; }
+  table tbody tr a {
+    color: #1ABC9C;
+    text-decoration: none; }
+  table tbody tr:hover {
+    background-color: #dcdcdc; }
+  table tbody tr:hover .btn-sm i {
+    display: block !important; }
+  table tbody tr td .trash {
+    color: transparent; }
+  table tbody tr:hover a.trash {
+    color: #1ABC9C;
+    display: block !important; }
+  table tbody td:nth-child(3) {
+    color: #1ABC9C; }
+  table tbody td:nth-child(4) {
+    color: #1ABC9C; }
+
+th, td {
+  padding: 0.5rem;
+  text-align: left; }
+
+tbody tr:nth-child(even) {
+  background: #eee; }
+
+.btn-sm {
+  background-color: transparent;
+  width: 30px; }
+  .btn-sm i {
+    color: #1ABC9C;
+    display: none; }
+  .btn-sm:hover {
+    cursor: pointer; }

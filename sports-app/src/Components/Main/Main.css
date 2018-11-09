@@ -1,0 +1,16 @@
+main {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  color: #444;
+  height: auto; }
+  main .separator {
+    grid-column-start: 3;
+    grid-column-end: 9; }
+    main .separator .line {
+      border-bottom: 5px solid #eeeeee;
+      margin: 50px auto; }
+  main .table {
+    grid-column-start: 2;
+    grid-column-end: 12;
+    border-collapse: collapse;
+    width: 100%; }

@@ -1,0 +1,23 @@
+section .details .item {
+  grid-column: 2 span;
+  padding: 50px 0; }
+  section .details .item .icon {
+    font-size: 3rem;
+    float: left;
+    color: #3ac5a9; }
+  section .details .item .body {
+    height: 100px;
+    float: left;
+    padding: 15px; }
+    section .details .item .body .type {
+      width: 100%;
+      line-height: 0;
+      font-weight: 400;
+      font-size: 14px;
+      display: block;
+      color: #676668; }
+    section .details .item .body .title {
+      width: 100%;
+      font-size: 32px;
+      font-weight: bold;
+      display: block; }

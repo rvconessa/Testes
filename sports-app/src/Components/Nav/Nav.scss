@@ -1,0 +1,45 @@
+nav {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  background-color: #eeeeee;
+  color: #444;
+
+  .breadcrumb {
+    grid-column-start: 2;
+    grid-column-end: 12;
+
+    .link {
+      color: #1abc9c;
+      text-decoration: none;
+
+      &:hover {
+        color: #BAEBE1;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+nav .breadcrumb .link::after {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f105';
+  color: #999999;
+  padding: 1rem;
+  font-size: 1.3rem;
+  text-decoration: none;
+  display:inline-block;
+}
+
+nav .breadcrumb .link:last-child {
+  color: #444;
+}
+
+nav .breadcrumb .link:last-child:hover {
+  color: #444;
+  text-decoration: none;
+}
+
+nav .breadcrumb .link:last-child::after {
+  content: '';
+}

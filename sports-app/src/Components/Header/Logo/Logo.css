@@ -1,0 +1,17 @@
+header .logo {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  margin: 25px 0px; }
+
+header .logo i {
+  font-size: 24px;
+  color: #ffffff;
+  padding: 10px;
+  background-color: #1ABC9C;
+  border-radius: 10px;
+  float: left; }
+
+header .logo h1 {
+  float: left;
+  padding: 10px;
+  font-size: 18px; }

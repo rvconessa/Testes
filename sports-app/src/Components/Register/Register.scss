@@ -1,0 +1,240 @@
+$greenlight: #1ABC9C;
+$cyan: #42b49b;
+
+section.register {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  color: #444;
+  height: auto;
+
+  .title {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    height: 100px;
+
+    h3 {
+      font-weight: 400;
+      font-size: 2rem;
+      padding:30px 0px;
+    }
+
+  }
+
+  .separator {
+    grid-column-start: 4;
+    grid-column-end: 12;
+    justify-self: stretch;
+
+    .line {
+      border: 0;
+      height: 0;
+      border-top: 5px solid rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      margin: 55px auto;
+    }
+  }
+
+  .item-c{
+    grid-column: span 1;
+    padding: 50px 0;
+  }
+
+  .item{
+    grid-column: span 3 ;
+
+    .title {
+      width: 100%;
+      font-size: 1.3rem;
+      display: block;
+      color:$cyan;
+      height: 35px;
+    }
+
+    .icon{
+      font-size: 4rem;
+      float: left;
+      color:$cyan;
+      margin-right:25px;
+    }
+
+    .body {
+      width: 90%;
+      font-size: 14px;
+      font-weight: 400;
+      display: block;
+      margin-left: 20px;
+    }
+  }
+}
+section.form-register {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    color: #444;
+    height: auto;
+
+    .separator {
+      grid-column-start: 3;
+      grid-column-end: 10;
+      justify-self: stretch;
+
+      .line {
+        border: 0;
+        height: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        margin: 35px auto;
+      }
+    }
+
+    form {
+      grid-column-start: 3;
+      grid-column-end: 10;
+      height: 100px;
+
+      .fields {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+      }
+
+      .field {
+        grid-column: span 2;
+      }
+    }
+}
+
+label {
+  width: 100%;
+  font-weight: bold;
+  display: inline-block;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+}
+
+.check {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  border: solid .1rem #D2D2D2;
+}
+
+label input[type='checkbox'] ~ .check {
+  border-radius: 5px;
+  height: 25px;
+  width: 25px;
+}
+
+label input[type='radio'] ~ .check {
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+}
+
+label:hover input ~ .check {
+  border: solid .1rem $greenlight;
+  cursor: pointer;
+}
+
+label input:checked ~ .check {
+  border: solid .1rem $greenlight;
+}
+
+.check:after {
+content: '';
+position: absolute;
+display: none;
+}
+
+label input:checked ~ .check:after {
+display: block;
+}
+
+label input[type='checkbox'] ~ .check:after {
+left: 9px;
+top: 5px;
+width: 5px;
+height: 10px;
+border: solid #333333;
+border-width: 0 3px 3px 0;
+-webkit-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+transform: rotate(45deg);
+}
+
+label input[type='radio'] ~ .check:after {
+  top: 5px;
+  left: 5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #333333;
+}
+
+input[type='text'],
+input[type='email'] {
+  border-radius: 5px;
+  height: 35px;
+  padding: 0 10px;
+  width: 80%;
+  border: solid .1rem #D2D2D2;
+  position: relative;
+  opacity: 1;
+}
+
+input[type='text']:focus,
+input[type='email']:focus {
+  border: solid .1rem $greenlight;
+}
+
+form span {
+  display: block;
+  font-weight: 600;
+}
+
+form input[type='text'] {
+  margin: 5px 0;
+}
+
+form .input {
+  height: 80px;
+  padding-bottom: 10px;
+}
+
+form .input .message {
+  color: red;
+}
+
+form .actions .sucess {
+  display: block;
+  color: green;
+}
+
+section.form-register form .help small{
+  font-size: 0.7rem;
+  display: none;
+}
+
+section.form-register form input:focus + .help small { display: block; }
+
+section.form-register form .fields .btn {
+  border-radius: 5px;
+  background-color: #E3E3E3;
+  padding: .8rem 1.2rem .6rem 1.2rem;
+  color: #8E97A6;
+  margin: 0 .5rem 2rem 0;
+  font-weight: 300;
+}
+
+section.form-register form .fields button[disabled] {
+  background-color: #E3E3E3;
+  color: #8E97A6;
+}
+
+section.form-register form .fields .btn-save {
+  background-color: $greenlight;
+  color: #FFFFFF;
+}

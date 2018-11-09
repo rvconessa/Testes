@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+body {
+  font-weight: 400;
+  font-size: .875rem;
+  color: rgba(0,0,0,.87);
+  line-height: 1.5;
+  font-family: 'Open Sans', sans-serif;
+  min-width: 360px;
+}

@@ -1,0 +1,8 @@
+main .title {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  height: 100px; }
+  main .title h3 {
+    font-weight: 400;
+    font-size: 2rem;
+    padding: 30px 0px; }
